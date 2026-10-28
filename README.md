@@ -11,8 +11,6 @@
 
 **What I recommend.** Neither model is ready to make these decisions on its own. The next step is a **shadow pilot** with gpt-oss-120b: for a few weeks, the AI reads real incoming tickets and makes its suggestions quietly in the background, while service advisors keep working exactly as they do today. No one acts on the AI's answers; they're only compared with what the advisors decided. I chose gpt-oss-120b because it was just as good at catching dangerous tickets at a fraction of the cost, and its weaker area, the next step, is exactly the decision an advisor would confirm anyway.
 
-**Full write-up:** [results page](https://claude.ai/artifact/AamUuNHaSEknc3u8CgFh1v)
-
 ## Results
 
 Both models answered all 30 tickets with the same prompt (`prompt_v1.txt`). Accuracy is shown against the corrected answer key, with the original key in brackets.
