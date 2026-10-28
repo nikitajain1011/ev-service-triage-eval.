@@ -11,6 +11,8 @@
 
 **What I recommend.** Neither model is ready to make these decisions on its own. The next step is a **shadow pilot** with gpt-oss-120b: for a few weeks, the AI reads real incoming tickets and makes its suggestions quietly in the background, while service advisors keep working exactly as they do today. No one acts on the AI's answers; they're only compared with what the advisors decided. I chose gpt-oss-120b because it was just as good at catching dangerous tickets at a fraction of the cost, and its weaker area, the next step, is exactly the decision an advisor would confirm anyway.
 
+**Full write-up:** [results page](https://claude.ai/artifact/AamUuNHaSEknc3u8CgFh1v)
+
 ## Results
 
 Both models answered all 30 tickets with the same prompt (`prompt_v1.txt`). Accuracy is shown against the corrected answer key, with the original key in brackets.
@@ -59,7 +61,7 @@ Proposed exit criteria: safety recall of at least 99% on a few hundred real safe
 - **Small sample.** 14 of 14 is consistent with a true catch rate as low as about 80% (95% confidence).
 - **Rules and tickets grew together.** The labeling guide was refined on these same 30 tickets before it was frozen, so results may be optimistic. Version 2 adds 30 held-out tickets.
 - **Synthetic tickets.** 25 of 30 were drafted with Claude (a different model family from both models tested); 5 were written by hand.
-- **One human labeler,** with an AI as second labeler. The rules have not yet been checked by a service technician.
+- **One human labeler,** with an AI as second labeler. A service technician has looked over the tickets but not yet reviewed every answer in detail.
 - **Three labels corrected after the run,** where both models disagreed and the frozen guide supported the change. Results are shown both ways.
 - **Free-tier conditions** and third-party prices; one run per model at temperature 0.
 
@@ -86,6 +88,8 @@ The categories and rules are my own, modeled on public information about EV serv
 2. Ran a 30-ticket labeling pilot. It produced 7 new rules and showed where my own labels drifted from my rules.
 3. Added an automatic consistency check to the label sheet and froze the guide as version 1.
 4. Built the prompt only from the guide, ran both models, and adjudicated: three labels corrected where both models disagreed and the guide supported the change.
+
+**Field check:** on Oct 27, 2026, a service technician looked over the 30 tickets and said they read like real customer problems and that the project shows a good understanding of the work. He didn't have time to review every answer, and we've agreed to go through the answer key in detail next.
 
 Claude (Anthropic) was my collaborator for drafting tickets, the prompt, and the Python scripts, and as a second labeler. The labels, rule decisions, and recommendation are mine.
 
